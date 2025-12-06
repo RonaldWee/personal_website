@@ -31,7 +31,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --baseURL "https://ronaldwee.github.io/personal_website/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
