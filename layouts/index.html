@@ -1,0 +1,52 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="relative py-16 md:py-20 overflow-hidden">
+  <!-- Gradient Background -->
+  <div class="absolute inset-0 -z-10 gradient-bg opacity-10"></div>
+
+  <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="max-w-5xl mx-auto text-center">
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight px-8 md:px-16">
+        Hi I'm <span class="gradient-text">Ronald</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl text-muted mb-10 leading-relaxed px-10 md:px-20">
+        From RAG pipelines to speech recognition, I translate cutting-edge AI into scalable enterprise solutions
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+        <a href="/projects/" class="btn btn-primary inline-flex items-center justify-center gap-2">
+          View Projects
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-20 md:py-30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
+
+      <div class="space-y-10 text-lg text-muted leading-loose max-w-2xl mx-auto px-8">
+        <p class="text-center">
+          I'm an <span class="text-foreground font-semibold">AI Engineer at NCS</span>, building GenAI systems and speech AI solutions that transform how enterprises interact with data and users. My work focuses on translating cutting-edge research into production-ready systems that deliver measurable business impact.
+        </p>
+
+        <p class="text-center">
+          My journey started in <span class="text-foreground font-semibold">Mechanical Engineering</span>, evolved through <span class="text-foreground font-semibold">Data Science</span>, and now centers on <span class="text-foreground font-semibold">AI Engineering</span>. This unique path gives me a systems-thinking approach to ML problems. I understand both the theoretical foundations and the practical engineering required to deploy AI at scale.
+        </p>
+
+        <p class="text-center">
+          My expertise spans the <span class="text-foreground font-semibold">full ML lifecycle</span>: from data pipeline engineering and model training to fine-tuning, evaluation, and deployment. I specialize in <span class="text-foreground font-semibold">Generative AI</span>, <span class="text-foreground font-semibold">Speech AI</span>, but also had experience in data science problems like <span class="text-foreground font-semibold">time series forecasting</span>, <span class="text-foreground font-semibold">regression and classification</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

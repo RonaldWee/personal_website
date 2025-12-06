@@ -1,0 +1,118 @@
+{{ define "main" }}
+<div class="min-h-screen py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h1>
+      <p class="text-muted text-lg max-w-2xl mx-auto">
+        I'm currently exploring Solutions Engineer and AI Engineering opportunities where I can bridge technical architecture and customer success.
+      </p>
+    </div>
+
+    <!-- Contact Cards -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Direct Contact -->
+      <div class="card mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Get In Touch</h2>
+
+        <div class="space-y-4">
+          <!-- Email -->
+          <a href="mailto:{{ .Site.Params.author.email }}" class="flex items-center gap-4 p-4 rounded-lg hover:bg-muted-bg transition-colors">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary text-xl">✉</span>
+            </div>
+            <div>
+              <div class="font-semibold">Email</div>
+              <div class="text-muted">{{ .Site.Params.author.email }}</div>
+            </div>
+          </a>
+
+          <!-- Phone -->
+          <a href="tel:{{ .Site.Params.author.phone }}" class="flex items-center gap-4 p-4 rounded-lg hover:bg-muted-bg transition-colors">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary text-xl">📞</span>
+            </div>
+            <div>
+              <div class="font-semibold">Phone</div>
+              <div class="text-muted">{{ .Site.Params.author.phone }}</div>
+            </div>
+          </a>
+
+          <!-- Location -->
+          <div class="flex items-center gap-4 p-4 rounded-lg">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary text-xl">📍</span>
+            </div>
+            <div>
+              <div class="font-semibold">Location</div>
+              <div class="text-muted">{{ .Site.Params.author.location }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="card mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Connect on Social</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {{ with .Site.Params.social.github }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-lg hover:bg-muted-bg transition-colors">
+            <span class="text-2xl text-primary">🐙</span>
+            <div>
+              <div class="font-semibold">GitHub</div>
+              <div class="text-sm text-muted">Code & Projects</div>
+            </div>
+          </a>
+          {{ end }}
+
+          {{ with .Site.Params.social.linkedin }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-lg hover:bg-muted-bg transition-colors">
+            <span class="text-2xl text-primary">💼</span>
+            <div>
+              <div class="font-semibold">LinkedIn</div>
+              <div class="text-sm text-muted">Professional Profile</div>
+            </div>
+          </a>
+          {{ end }}
+
+          {{ with .Site.Params.social.medium }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-lg hover:bg-muted-bg transition-colors">
+            <span class="text-2xl text-primary">📝</span>
+            <div>
+              <div class="font-semibold">Medium</div>
+              <div class="text-sm text-muted">Technical Writing</div>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Resume Download -->
+      <div class="card text-center">
+        <h2 class="text-2xl font-bold mb-4">Resume</h2>
+        <p class="text-muted mb-6">
+          Download my resume for detailed information about my experience, education, and technical skills.
+        </p>
+        <a href="/resume.pdf" download class="btn btn-primary inline-flex items-center gap-2">
+          <span>↓</span>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <div class="max-w-2xl mx-auto p-8 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10">
+        <h3 class="text-2xl font-bold mb-4">Looking for a Solutions Engineer?</h3>
+        <p class="text-muted mb-6">
+          I bring deep technical AI/ML expertise combined with strong communication skills and a passion for translating complex technology into customer value. Let's discuss how I can help your team succeed.
+        </p>
+        <a href="mailto:{{ .Site.Params.author.email }}?subject=Opportunity Discussion" class="btn btn-primary">
+          Start a Conversation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

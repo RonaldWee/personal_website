@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="min-h-screen py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Skills & Expertise</h1>
+      <p class="text-muted text-lg max-w-2xl mx-auto">
+        Full-stack AI/ML capabilities spanning the entire machine learning lifecycle—from data engineering to production deployment.
+      </p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {{ range $.Site.Data.skills.categories }}
+      <div class="card">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-4xl">{{ .icon }}</span>
+          <h3 class="text-2xl font-bold">{{ .name }}</h3>
+        </div>
+
+        <ul class="space-y-2">
+          {{ range .skills }}
+          <li class="flex items-start gap-2">
+            <span class="text-primary mt-1">✓</span>
+            <span class="text-muted">{{ . }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-20 text-center">
+      <div class="card max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold mb-4">Always Learning</h3>
+        <p class="text-muted leading-relaxed">
+          The AI landscape evolves rapidly. I stay current through hands-on projects, research paper implementations, and continuous experimentation with emerging techniques in GenAI, RAG systems, and distributed ML. My engineering background gives me a first-principles approach to understanding new technologies deeply, not just superficially.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

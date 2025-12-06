@@ -1,0 +1,51 @@
+<footer class="bg-muted-bg border-t border-card-bg py-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- About -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">{{ .Site.Params.name }}</h3>
+        <p class="text-muted">{{ .Site.Params.tagline }}</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL }}" class="text-muted hover:text-primary transition-colors">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Connect</h3>
+        <div class="flex space-x-4">
+          {{ with .Site.Params.social.github }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-primary transition-colors">
+            GitHub
+          </a>
+          {{ end }}
+          {{ with .Site.Params.social.linkedin }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-primary transition-colors">
+            LinkedIn
+          </a>
+          {{ end }}
+          {{ with .Site.Params.social.medium }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-primary transition-colors">
+            Medium
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-card-bg text-center text-muted">
+      <p>&copy; {{ now.Year }} {{ .Site.Params.name }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

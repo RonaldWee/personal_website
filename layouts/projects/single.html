@@ -1,0 +1,75 @@
+{{ define "main" }}
+<div class="min-h-screen py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Back Button -->
+    <a href="/projects/" class="inline-flex items-center gap-2 text-primary hover:text-primary-hover mb-8 transition-colors">
+      <span>←</span>
+      Back to Projects
+    </a>
+
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <div class="mb-4">
+        <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold {{ if eq .Params.projectType "industry" }}bg-primary/10 text-primary{{ else }}bg-accent/10 text-accent{{ end }}">
+          {{ if eq .Params.projectType "industry" }}Industry Project{{ else }}Personal Project{{ end }}
+        </span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ .Title }}</h1>
+      <p class="text-xl text-muted max-w-3xl mx-auto">{{ .Description }}</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Left Column - Main Content -->
+      <div class="lg:col-span-2 space-y-12 prose prose-invert max-w-none">
+        {{ .Content }}
+      </div>
+
+      <!-- Right Column - Sidebar -->
+      <div class="space-y-8">
+        <!-- Tech Stack -->
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4">Tech Stack</h3>
+          <div class="flex flex-wrap gap-2">
+            {{ range .Params.techStack }}
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-md text-sm font-medium">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4">Tags</h3>
+          <div class="flex flex-wrap gap-2">
+            {{ range .Params.tags }}
+            <span class="px-3 py-1 bg-muted-bg text-muted rounded-md text-sm">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- Links -->
+        {{ if or .Params.github .Params.demo }}
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4">Links</h3>
+          <div class="space-y-3">
+            {{ with .Params.github }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-primary hover:text-primary-hover transition-colors">
+              GitHub
+              <span>↗</span>
+            </a>
+            {{ end }}
+            {{ with .Params.demo }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-primary hover:text-primary-hover transition-colors">
+              Live Demo
+              <span>↗</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

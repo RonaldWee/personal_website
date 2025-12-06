@@ -1,0 +1,43 @@
+baseURL = 'https://ronaldnovero.com/'
+languageCode = 'en-us'
+title = 'Ronald | AI Engineer'
+theme = ''
+
+[params]
+  name = 'Ronald'
+  tagline = 'AI Engineer | Building Production ML Systems'
+  description = 'AI Engineer specializing in RAG systems, speech recognition, and production ML pipelines. Building scalable GenAI solutions that drive business impact.'
+
+  [params.author]
+    name = 'Ronald'
+    email = 'ronaldnov@hotmail.com'
+    phone = '+65 97878992'
+    location = 'Singapore'
+
+  [params.social]
+    github = 'https://github.com/ronaldnovero'
+    linkedin = 'https://linkedin.com/in/ronaldnovero'
+    medium = 'https://medium.com/@ronaldnovero'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Projects'
+    url = '/projects/'
+    weight = 2
+  [[menu.main]]
+    name = 'Skills'
+    url = '/skills/'
+    weight = 3
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
