@@ -7,9 +7,8 @@ projectType: "personal"
 featured: true
 image: "/images/multimodal-rag.jpg"
 tags: ["RAG", "Multimodal AI", "ColPali", "Next.js", "Qdrant"]
-techStack: ["Next.js 14", "TypeScript", "FastAPI", "ColPali", "Qdrant", "Tesseract OCR", "pdfplumber", "Google Colab", "Cloudflare Tunnel", "Claude 3.5 Sonnet"]
-github: "https://github.com/ronaldnovero/multimodal-rag"
-demo: "https://multimodal-rag.vercel.app"
+techStack: ["Next.js 14", "TypeScript", "FastAPI", "ColPali", "Qdrant", "Tesseract OCR", "pdfplumber", "Google Colab", "Cloudflare Tunnel"]
+github: "https://github.com/RonaldWee/colpali_rag"
 weight: 4
 ---
 
@@ -36,34 +35,6 @@ Built Next.js + FastAPI RAG system using ColPali vision-language embeddings for 
 - Vision LLM captioning for visual elements
 - Remote GPU via Colab + Cloudflare Tunnel
 - Fat payload approach (thumbnails, text, captions in DB)
-
-## Technical Deep Dive
-
-### Architecture
-
-Next.js frontend, FastAPI backend, ColPali API on Colab T4 GPU, Qdrant vector DB with multi-vector support
-
-### Key Technical Decisions
-
-1. **ColPali over CLIP**: Multi-vector embeddings capture fine-grained visual details
-2. **Two-stage retrieval**: Mean-pooled for speed, MaxSim for accuracy
-3. **Fat payload**: Trade storage for speed (no reprocessing, instant UI display)
-4. **Colab + Cloudflare**: Free GPU via public tunnel
-
-### Implementation Highlights
-
-Each page generates 1024 patch embeddings (128-dim each). Stage 1 uses mean-pooled vector for fast top-15 candidate retrieval. Stage 2 computes MaxSim scores on full multi-vectors for accurate top-5 ranking.
-
-### Challenges & Solutions
-
-Balancing retrieval speed with multi-vector accuracy. Two-stage approach achieves ~1-2s total (vs ~10s+ pure multi-vector) while maintaining accuracy.
-
-## Results
-
-- **Retrieval Time**: 1-2s
-- **Vectors per Page**: 1024
-- **Storage per Page**: 550-650KB
-- **GPU Cost**: $0
 
 ## Key Learnings
 

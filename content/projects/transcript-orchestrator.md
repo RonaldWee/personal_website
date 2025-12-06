@@ -36,34 +36,6 @@ Built FastAPI microservices platform orchestrating 3 ASR models with parallel ex
 - Fault-tolerant independent service failures
 - PII redaction for compliance
 
-## Technical Deep Dive
-
-### Architecture
-
-FastAPI orchestrator coordinating Whisper/Meralion/INS8 ASR models, Silero VAD for segmentation, WeSpeaker for speaker ID, Emotion2Vec+ for emotion, and NeMo/Meralion for post-processing
-
-### Key Technical Decisions
-
-1. **Parallel execution**: 50% faster by running transcription + speaker ID concurrently
-2. **Sliding window post-processing**: Handles entities spanning boundaries (phone numbers)
-3. **Fault isolation**: Independent exception handling prevents cascading failures
-4. **Multi-worker coordination**: gRPC for load balancing and service discovery
-
-### Implementation Highlights
-
-ThreadPoolExecutor manages parallel tasks with independent error handling. Context-aware post-processing uses 3-chunk sliding window (previous, current, next) for each stage (ITN, punctuation, PII).
-
-### Challenges & Solutions
-
-Handling entities spanning chunk boundaries (e.g., phone number split across sentences). Solved with sliding window approach maintaining context across chunks and PII storing original text for accurate detection.
-
-## Results
-
-- **Latency Reduction**: 50%
-- **Streaming Response Time**: <1s
-- **Concurrent Workers**: 16/service
-- **Fault Tolerance**: ✓
-
 ## Key Learnings
 
 - Parallel execution with fault isolation achieves both speed and reliability

@@ -8,7 +8,6 @@ featured: true
 image: "/images/rag-chatbot.jpg"
 tags: ["RAG", "GenAI", "FastAPI", "LlamaIndex", "Production ML"]
 techStack: ["MinerU", "LlamaIndex", "FastAPI", "Milvus", "Docker", "BAAI bge-m3", "YOLOv2", "Python"]
-github: "https://github.com/ronaldnovero/rag-chatbot"
 weight: 1
 ---
 
@@ -35,34 +34,6 @@ Built production-grade RAG pipeline using MinerU for PDF parsing, implementing s
 - Deduplication and semantic reranking
 - Answer validation with retry logic (max 3 attempts)
 - Docker containerization for deployment
-
-## Technical Deep Dive
-
-### Architecture
-
-FastAPI backend orchestrating MinerU PDF parsing, Milvus vector storage, and LlamaIndex RAG pipeline
-
-### Key Technical Decisions
-
-1. **MinerU over PyPDF**: Better table structure preservation with YOLOv2 detection
-2. **Atomic table chunking**: Each table row as separate chunk with full table context
-3. **Sub-query generation**: Break complex questions into focused sub-queries
-4. **LLM-as-judge validation**: Auto-retry on low confidence scores
-
-### Implementation Highlights
-
-Hybrid chunking strategy combining semantic text chunks (512 tokens) with atomic table chunks. Each table row stored separately but maintains reference to parent table for context.
-
-### Challenges & Solutions
-
-Handling tables spanning multiple pages and preserving relationships between table footnotes and data rows. Solved with metadata linking and parent-child chunk relationships.
-
-## Results
-
-- **Context Precision**: +25%
-- **Faithfulness**: +23%
-- **Answer Relevancy**: +20%
-- **Production Ready**: ✓
 
 ## Key Learnings
 

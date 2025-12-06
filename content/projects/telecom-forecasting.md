@@ -6,8 +6,8 @@ category: "timeseries"
 projectType: "industry"
 featured: true
 image: "/images/telecom-forecasting.jpg"
-tags: ["Time Series", "Forecasting", "Spark", "Production ML", "Airflow"]
-techStack: ["Python", "statsmodels", "Spark", "Airflow", "PostgreSQL", "pandas", "scikit-learn"]
+tags: ["Time Series", "Forecasting"]
+techStack: ["Python", "statsmodels", "pandas", "scikit-learn"]
 weight: 6
 ---
 
@@ -35,29 +35,6 @@ Implemented multi-method time series approach comparing ETS, ARIMA, and regressi
 - Rolling imputation for missing values
 - Regional model comparison framework
 
-## Technical Deep Dive
-
-### Key Technical Decisions
-
-1. **Multi-method approach**: ETS for stable trends, ARIMA for autocorrelation, regression for causal drivers
-2. **Regional models**: Different regions exhibit different patterns
-3. **RAN features**: Cell-level metrics improve accuracy vs time-only models
-4. **Custom outlier handling**: IQR detection + rolling mean imputation
-
-### Implementation Highlights
-
-Automated model selection per region based on validation MAPE. ETS chosen for regions with clear seasonality, ARIMA for high autocorrelation, regression where RAN features have strong correlation.
-
-### Challenges & Solutions
-
-Handling Ramadan holidays causing irregular seasonality. Solved with external regressors for holiday periods and adaptive seasonal windows.
-
-## Results
-
-- **Average MAPE**: <10%
-- **Forecast Horizon**: 6 months
-- **Regions Covered**: 10+
-- **Deployment**: Production
 
 ## Key Learnings
 

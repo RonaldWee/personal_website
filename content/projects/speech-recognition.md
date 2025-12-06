@@ -8,7 +8,6 @@ featured: true
 image: "/images/speech-recognition.jpg"
 tags: ["Speech AI", "LoRA", "Fine-tuning", "Ray", "PyTorch"]
 techStack: ["Whisper", "LoRA/PEFT", "Ray Tune", "PyTorch", "BitsAndBytes", "torchaudio", "Hugging Face"]
-github: "https://github.com/ronaldnovero/whisper-lora"
 weight: 2
 ---
 
@@ -35,34 +34,6 @@ Implemented parameter-efficient fine-tuning using LoRA adapters with 8-bit quant
 - Automated hyperparameter search (learning rate, lora_r, lora_alpha, dropout)
 - ASHA early stopping for efficient resource usage
 - Multi-GPU distributed training with Ray
-
-## Technical Deep Dive
-
-### Architecture
-
-Whisper base model with LoRA adapters, Ray Tune orchestrating distributed HPO across GPUs
-
-### Key Technical Decisions
-
-1. **LoRA over full fine-tuning**: 98% fewer parameters, no catastrophic forgetting
-2. **8-bit quantization**: Enables training on consumer GPUs (1.6GB vs 20GB)
-3. **Ray Tune ASHA scheduler**: Early stopping of low-performing trials
-4. **Focus on Q,V projections**: Attention mechanism most impactful for adaptation
-
-### Implementation Highlights
-
-Hybrid training approach with frozen base model and trainable LoRA adapters. Ray Tune manages parallel trials with different hyperparameters, automatically terminating underperforming runs.
-
-### Challenges & Solutions
-
-Balancing model capacity (lora_r) with overfitting risk on small domain-specific dataset. Solved with automated hyperparameter search finding optimal lora_r=16, alpha=32.
-
-## Results
-
-- **WER Improvement**: 30%
-- **Parameter Reduction**: 98%
-- **Memory Savings**: 95%
-- **Training Time**: ~6 hours
 
 ## Key Learnings
 
