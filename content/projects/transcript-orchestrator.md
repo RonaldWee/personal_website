@@ -3,7 +3,7 @@ title: "Production Speech-to-Text Orchestration Platform"
 description: "50% latency reduction through parallel processing and multi-model orchestration"
 date: 2024-03-01
 category: "microservices"
-projectType: "industry"
+projectType: "enterprise"
 featured: true
 image: "/images/transcript-orchestrator.jpg"
 tags: ["Microservices", "Speech AI", "FastAPI", "Real-time Processing", "gRPC"]

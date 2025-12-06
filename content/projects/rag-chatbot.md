@@ -3,7 +3,7 @@ title: "Enterprise RAG Chatbot with Advanced Document Parsing"
 description: "Production RAG pipeline with 25% increase in context precision using advanced parsing and validation"
 date: 2024-01-01
 category: "rag"
-projectType: "industry"
+projectType: "enterprise"
 featured: true
 image: "/images/rag-chatbot.jpg"
 tags: ["RAG", "GenAI", "FastAPI", "LlamaIndex", "Production ML"]

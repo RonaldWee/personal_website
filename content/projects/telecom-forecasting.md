@@ -3,7 +3,7 @@ title: "GGSN Throughput Forecasting for Network Capacity Planning"
 description: "Time series forecasting with <10% MAPE enabling 6-month capacity planning"
 date: 2024-06-01
 category: "timeseries"
-projectType: "industry"
+projectType: "enterprise"
 featured: true
 image: "/images/telecom-forecasting.jpg"
 tags: ["Time Series", "Forecasting"]

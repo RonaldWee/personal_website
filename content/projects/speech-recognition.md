@@ -3,7 +3,7 @@ title: "Domain-Specific Speech Recognition with LoRA Fine-Tuning"
 description: "30% WER reduction through parameter-efficient fine-tuning with 98% fewer parameters"
 date: 2024-02-01
 category: "speech"
-projectType: "industry"
+projectType: "enterprise"
 featured: true
 image: "/images/speech-recognition.jpg"
 tags: ["Speech AI", "LoRA", "Fine-tuning", "Ray", "PyTorch"]
