@@ -28,7 +28,7 @@ Built production-grade RAG pipeline using MinerU for PDF parsing, implementing s
 
 ## Key Features
 
-- YOLOv2-based layout detection for tables and figures
+- YOLO-based layout detection for tables and figures
 - Atomic table chunking with metadata preservation
 - Sub-query generation for complex multi-part questions
 - Deduplication and semantic reranking

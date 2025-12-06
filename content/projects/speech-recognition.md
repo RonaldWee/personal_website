@@ -13,7 +13,7 @@ weight: 2
 
 ## Challenge
 
-Whisper ASR model struggled with Singapore government service terminology (CPF, TADM, CorpPass, IRAS), achieving only 40% WER on domain-specific content. Full fine-tuning required 20GB VRAM and risked catastrophic forgetting.
+Whisper ASR model struggled with Singapore government service terminology (CPF, TADM, CorpPass, IRAS), causing a high 40% Word Error Rate (WER) on domain-specific content. Full fine-tuning required 24GB++ VRAM and risked catastrophic forgetting.
 
 ## Solution
 
@@ -23,7 +23,7 @@ Implemented parameter-efficient fine-tuning using LoRA adapters with 8-bit quant
 
 - 30% WER reduction (40% baseline → 10% fine-tuned)
 - 98% reduction in trainable parameters vs full fine-tuning
-- 95% memory savings (20GB → 1.6GB VRAM)
+- 66% memory savings (24GB → 8GB VRAM)
 - Multi-GPU distributed hyperparameter optimization
 
 ## Key Features
