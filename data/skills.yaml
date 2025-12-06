@@ -7,13 +7,13 @@ categories:
       - "Computer Vision (OpenCV, YOLOv7, Detectron2)"
       - "NLP & Speech (Whisper, Tokenizers, Audio Processing)"
       - "Model Training & Fine-tuning"
-      - "Experiment Tracking (MLflow, Weights & Biases)"
+      - "Experiment Tracking (Weights & Biases)"
 
   - name: "Generative AI & RAG"
     icon: "✨"
     skills:
       - "RAG Systems (LlamaIndex, Langchain)"
-      - "Vector Databases (Milvus, Pinecone, Qdrant)"
+      - "Vector Databases (Milvus, Chroma, Qdrant)"
       - "LLM Serving (vLLM, Ollama)"
       - "Prompt Engineering"
       - "Parameter-Efficient Fine-tuning (LoRA, PEFT)"
@@ -22,22 +22,19 @@ categories:
   - name: "Data Engineering & Big Data"
     icon: "📊"
     skills:
-      - "Spark (PySpark, Scala)"
+      - "Spark (Scala)"
       - "Hadoop Ecosystem"
       - "Workflow Orchestration (Airflow, DBT)"
       - "SQL & NoSQL (PostgreSQL, MongoDB, Redis)"
       - "Data Pipelines & ETL"
-      - "Stream Processing"
 
   - name: "Cloud & Deployment"
     icon: "☁️"
     skills:
       - "AWS (SageMaker, EC2, S3, Lambda)"
       - "Azure (ML Studio, Storage)"
-      - "Docker & Kubernetes"
+      - "Docker for model serving"
       - "API Development (FastAPI, gRPC, REST)"
-      - "CI/CD (GitHub Actions, GitLab CI)"
-      - "MLOps & Model Serving"
 
   - name: "Distributed Computing"
     icon: "⚡"
@@ -46,14 +43,12 @@ categories:
       - "Distributed Hyperparameter Optimization"
       - "Multi-GPU Training"
       - "Spark Distributed Processing"
-      - "Parallel Computing"
-      - "Resource Management"
 
   - name: "Programming & Tools"
     icon: "💻"
     skills:
-      - "Python (Expert)"
-      - "SQL (Advanced)"
+      - "Python"
+      - "SQL"
       - "Scala"
       - "C/C++"
       - "Git & GitHub"
