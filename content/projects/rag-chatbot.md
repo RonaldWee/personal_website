@@ -6,8 +6,8 @@ category: "rag"
 projectType: "enterprise"
 featured: true
 image: "/images/rag-chatbot.jpg"
-tags: ["RAG", "GenAI", "FastAPI", "LlamaIndex", "Production ML"]
-techStack: ["MinerU", "LlamaIndex", "FastAPI", "Milvus", "Docker", "BAAI bge-m3", "YOLOv2", "Python"]
+tags: ["RAG", "GenAI", "LlamaIndex", "FastAPI", "Production ML"]
+techStack: ["MinerU", "LlamaIndex", "FastAPI", "Milvus", "Docker", "vllm", "Python"]
 weight: 1
 ---
 

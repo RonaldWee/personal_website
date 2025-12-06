@@ -7,7 +7,7 @@ projectType: "enterprise"
 featured: true
 image: "/images/transcript-orchestrator.jpg"
 tags: ["Microservices", "Speech AI", "FastAPI", "Real-time Processing", "gRPC"]
-techStack: ["FastAPI", "WebSocket", "gRPC", "PostgreSQL", "Docker", "Whisper", "Silero VAD", "WeSpeaker", "Emotion2Vec+", "NeMo ITN"]
+techStack: ["FastAPI", "WebSocket", "gRPC", "PostgreSQL", "Docker"]
 weight: 3
 ---
 
