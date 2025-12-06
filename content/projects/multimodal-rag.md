@@ -24,7 +24,6 @@ Built Next.js + FastAPI RAG system using ColPali vision-language embeddings for 
 
 - Handles both digital and scanned PDFs seamlessly
 - Sub-2s retrieval with multi-vector reranking
-- Free GPU compute via Google Colab
 - Multimodal embeddings capture text + visual layout
 
 ## Key Features
