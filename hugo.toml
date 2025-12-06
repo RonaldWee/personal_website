@@ -1,7 +1,6 @@
 baseURL = 'https://ronaldwee.github.io/personal_website/'
 languageCode = 'en-us'
 title = 'Ronald | AI Engineer'
-theme = ''
 
 [params]
   name = 'Ronald'
