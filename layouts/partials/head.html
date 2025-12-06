@@ -3,7 +3,7 @@
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
 
-{{ $styles := resources.Get "css/main.css" | resources.PostCSS }}
+{{ $styles := resources.Get "css/main.css" | css.PostCSS }}
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ end }}
