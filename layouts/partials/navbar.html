@@ -1,11 +1,6 @@
 <nav class="bg-background/95 backdrop-blur-sm border-b border-muted-bg sticky top-0 z-50">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-      <!-- Logo/Name -->
-      <a href="{{ "/" | relURL }}" class="text-xl font-bold gradient-text">
-        {{ .Site.Params.name }}
-      </a>
-
       <!-- Navigation Links -->
       <div class="hidden md:flex space-x-8">
         {{ range .Site.Menus.main }}
