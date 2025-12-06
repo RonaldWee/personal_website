@@ -1,4 +1,4 @@
-baseURL = 'https://ronaldnovero.com/'
+baseURL = 'https://ronaldwee.github.io/personal_website/'
 languageCode = 'en-us'
 title = 'Ronald | AI Engineer'
 theme = ''
@@ -15,9 +15,9 @@ theme = ''
     location = 'Singapore'
 
   [params.social]
-    github = 'https://github.com/ronaldnovero'
-    linkedin = 'https://linkedin.com/in/ronaldnovero'
-    medium = 'https://medium.com/@ronaldnovero'
+    github = 'https://github.com/RonaldWee'
+    linkedin = 'https://www.linkedin.com/in/ronald-wee-73057a1a2/'
+    medium = 'https://medium.com/@ronaldwee_20418'
 
 [menu]
   [[menu.main]]
