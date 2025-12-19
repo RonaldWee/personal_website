@@ -3,8 +3,8 @@ categories:
     icon: "🤖"
     skills:
       - "Deep Learning (PyTorch, Hugging Face Transformers)"
-      - "Classical ML (Scikit-Learn, XGBoost, LightGBM)"
-      - "Computer Vision (OpenCV, YOLOv7, Detectron2)"
+      - "Classical ML (Scikit-Learn)"
+      - "Computer Vision (OpenCV)"
       - "NLP & Speech (Whisper, Tokenizers, Audio Processing)"
       - "Model Training & Fine-tuning"
       - "Experiment Tracking (Weights & Biases)"
@@ -25,14 +25,14 @@ categories:
       - "Spark (Scala)"
       - "Hadoop Ecosystem"
       - "Workflow Orchestration (Airflow, DBT)"
-      - "SQL & NoSQL (PostgreSQL, MongoDB, Redis)"
+      - "SQL (PostgreSQL)"
       - "Data Pipelines & ETL"
 
   - name: "Cloud & Deployment"
     icon: "☁️"
     skills:
-      - "AWS (SageMaker, EC2, S3, Lambda)"
-      - "Azure (ML Studio, Storage)"
+      - "AWS (SageMaker, EC2, S3)"
+      - "Azure (Azure DevOps, Azure VMs)"
       - "Docker for model serving"
       - "API Development (FastAPI, gRPC, REST)"
 
