@@ -2,9 +2,10 @@
 <div class="min-h-screen py-20">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
-    <div class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
-      <p class="text-muted text-lg max-w-2xl mx-auto">
+    <div class="text-center mb-16 animate-fadeInUp">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Projects</h1>
+      <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-6"></div>
+      <p class="text-muted text-xl max-w-2xl mx-auto">
         Production ML systems and AI solutions showcasing technical depth, business impact, and end-to-end implementation.
       </p>
     </div>
@@ -12,32 +13,51 @@
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {{ range .Pages.ByWeight }}
-      <article class="bg-card-bg p-6 rounded-xl shadow-lg border-2 border-slate-600 hover:border-primary hover:scale-105 transition-all duration-300">
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 {{ if eq .Params.projectType "enterprise" }}bg-primary/10 text-primary{{ else }}bg-accent/10 text-accent{{ end }}">
-          {{ if eq .Params.projectType "enterprise" }}Enterprise Project{{ else }}Personal Project{{ end }}
-        </span>
+      <article class="group bg-card-bg p-6 rounded-2xl shadow-lg border border-border hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 relative overflow-hidden">
+        <!-- Gradient overlay on hover -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
 
-        <h3 class="text-lg font-bold mb-2">{{ .Title }}</h3>
-        <p class="text-muted text-sm mb-3">{{ .Description }}</p>
+        <div class="relative z-10">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold {{ if eq .Params.projectType "enterprise" }}bg-primary/10 text-primary border border-primary/20{{ else }}bg-accent/10 text-accent border border-accent/20{{ end }}">
+              {{ if eq .Params.projectType "enterprise" }}Enterprise{{ else }}Personal{{ end }}
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+            </div>
+          </div>
 
-        <!-- Tags -->
-        <div class="flex flex-wrap gap-2 mb-3">
-          {{ range first 3 .Params.tags }}
-          <span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">{{ . }}</span>
-          {{ end }}
+          <h3 class="text-xl font-bold mb-3 group-hover:gradient-text transition-all">{{ .Title }}</h3>
+          <p class="text-muted text-sm mb-4 leading-relaxed">{{ .Description }}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            {{ range first 3 .Params.tags }}
+            <span class="px-3 py-1 bg-muted-bg text-muted rounded-full text-xs font-medium border border-border group-hover:border-primary/30 transition-colors">{{ . }}</span>
+            {{ end }}
+          </div>
+
+          <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-hover inline-flex items-center gap-2 text-sm font-semibold group/link">
+            Learn More
+            <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
         </div>
-
-        <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-hover inline-flex items-center gap-2 text-sm">
-          Learn More
-          <span>→</span>
-        </a>
       </article>
       {{ end }}
     </div>
 
     <!-- Project Count -->
-    <div class="mt-12 text-center">
-      <p class="text-muted">Showing {{ len .Pages }} projects</p>
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center gap-2 px-6 py-3 bg-muted-bg rounded-full border border-border">
+        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+        </svg>
+        <p class="text-muted font-medium">Showing <span class="text-foreground font-bold">{{ len .Pages }}</span> projects</p>
+      </div>
     </div>
   </div>
 </div>

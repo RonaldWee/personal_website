@@ -16,6 +16,7 @@ module.exports = {
         'muted-bg': '#1e293b',
         'card-bg': '#334155',
         background: '#0f172a',
+        border: '#475569',
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],

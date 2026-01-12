@@ -1,27 +1,36 @@
-<nav class="bg-background/95 backdrop-blur-sm border-b border-muted-bg sticky top-0 z-50">
+<nav class="bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-sm">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
+      <!-- Logo/Name -->
+      <a href="{{ "/" | relURL }}" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-white text-lg group-hover:scale-105 transition-transform">
+          R
+        </div>
+        <span class="hidden sm:block font-bold text-xl gradient-text">Ronald</span>
+      </a>
+
       <!-- Navigation Links -->
-      <div class="hidden md:flex space-x-8">
+      <div class="hidden md:flex items-center space-x-8">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL | relURL }}" class="text-muted hover:text-primary transition-colors {{ if $.IsMenuCurrent "main" . }}text-primary{{ end }}">
+        <a href="{{ .URL | relURL }}" class="text-muted hover:text-primary transition-all duration-200 relative group {{ if $.IsMenuCurrent "main" . }}text-primary{{ end }}">
           {{ .Name }}
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full {{ if $.IsMenuCurrent "main" . }}w-full{{ end }}"></span>
         </a>
         {{ end }}
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden text-muted hover:text-primary" onclick="toggleMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button class="md:hidden text-muted hover:text-primary p-2 rounded-lg hover:bg-muted-bg transition-all" onclick="toggleMenu()" aria-label="Toggle menu">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
+    <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-1 animate-slideDown">
       {{ range .Site.Menus.main }}
-      <a href="{{ .URL | relURL }}" class="block py-2 text-muted hover:text-primary transition-colors {{ if $.IsMenuCurrent "main" . }}text-primary{{ end }}">
+      <a href="{{ .URL | relURL }}" class="block py-3 px-4 rounded-lg text-muted hover:text-primary hover:bg-muted-bg transition-all {{ if $.IsMenuCurrent "main" . }}text-primary bg-muted-bg{{ end }}">
         {{ .Name }}
       </a>
       {{ end }}
